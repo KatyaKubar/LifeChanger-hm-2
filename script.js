@@ -33,3 +33,72 @@ console.log("День тижня:", dayOfWeekUkraine);
 ======= Друга задача =======
 */
 
+function toCamelCase(str) {
+  const words = str.split("_");
+  const result = words.map((word) => {
+    if (/[a-z]/.test(word[0])) {
+      return word[0].toUpperCase() + word.slice(1);
+    } else {
+      return word;
+    }
+  });
+  return result.join("");
+}
+
+const str = "var_text_hello";
+const result = toCamelCase(str);
+console.log(result);
+
+/*
+======= Третя задача =======
+*/
+
+function fillArrayWithX() {
+  const array = [];
+  for (let i = 0; i < 10; i++) {
+    array.push("x");
+  }
+  return array;
+}
+
+const resultArray = fillArrayWithX();
+console.log(resultArray);
+
+/*
+======= Четверта задача =======
+*/
+
+function getNumberConsole(a) {
+  if (a > 0) {
+    return function () {
+      console.log(1);
+    };
+  } else {
+    return function () {
+      console.log(2);
+    };
+  }
+}
+
+const a = 1;
+const f = getNumberConsole(a);
+f();
+
+/*
+======= П`ята задача =======
+*/
+
+function ggg(func1, func2) {
+  return func1() + func2();
+}
+
+const anonymNumbers = ggg(
+  function() {
+    return 3;
+  },
+  function() {
+    return 4;
+  }
+);
+
+console.log(anonymNumbers);
