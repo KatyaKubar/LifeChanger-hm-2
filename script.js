@@ -102,3 +102,41 @@ const anonymNumbers = ggg(
 );
 
 console.log(anonymNumbers);
+
+/*
+======= Шоста задача =======
+*/
+
+function compareArrays(arr1, arr2) {
+  if (arr1.length !== arr2.length) {
+    return false;
+  }
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr1[i] !== arr2[i]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+const arr1 = [1, 2, 3];
+const arr2 = [1, 2, 3];
+
+const compare = compareArrays(arr1, arr2);
+
+console.log(compare);
+
+/*
+======= Сьома задача =======
+*/
+
+function chunkArray(array, chunkSize) {
+  const chunks = [];
+  for (let i = 0; i < array.length; i += chunkSize) {
+    chunks.push(array.slice(i, i + chunkSize));
+  }
+  return chunks;
+}
+
+const chunkResult = chunkArray([1, 2, 3, 4, 5], 2);
+console.log(chunkResult); 
